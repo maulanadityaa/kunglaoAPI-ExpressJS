@@ -1,8 +1,4 @@
 const knex = require('../config/database');
-const mysql = require('mysql');
-const { response } = require('express');
-const CircularJSON = require('circular-json');
-// const pool = mysql.createPool(config);
 
 //get current date and time
 var today = new Date();
