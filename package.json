@@ -1,0 +1,18 @@
+{
+  "name": "kunglaoapi-expressjs",
+  "version": "1.0.0",
+  "description": "RESTFul API KungLao Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
+    "express": "^4.17.1",
+    "knex": "^0.95.6",
+    "mysql": "^2.18.1"
+  }
+}
