@@ -19,6 +19,8 @@ var dateTime = date+' '+time;
 const getAllBooks = async (req, res) => {
     try {
         let buku = await knex('books');
+        const string = JSON.stringify(buku)
+        const databuku = JSON.parse(string)
         if(!buku){
             res.status(404)
                 .send({
@@ -30,7 +32,7 @@ const getAllBooks = async (req, res) => {
                 .send({
                     success: true,
                     message: 'Get All Books',
-                    data: buku,
+                    data: databuku,
                 })
         }
     } catch (e) {
