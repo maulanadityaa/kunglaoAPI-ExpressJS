@@ -1,10 +1,16 @@
 const express = require('express')
 const app = express()
 const port = 8000
-const bodyParser = require('body-parser');
+var session = require('express-session');
 
 app.use(express.urlencoded({extended: false, limit:'20mb'})); 
 app.use(express.json({limit:'20mb'}))
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
 app.get('/', (req, res) => res.send('RESTFUL API KungLao Library'))
 

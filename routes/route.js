@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const knex = require('../config/database');
 const { book } = require('../controllers');
 const { user } = require('../controllers')
 const { pinjaman } = require('../controllers')
+const { auth } = require('../controllers')
 
 
 //BOOKS MANAGEMENTS
@@ -44,5 +44,16 @@ router.post('/api/pinjaman', pinjaman.storePinjaman)
 
 // DELETE localhost:8000/api/pinjaman => delete pinjaman
 router.delete('/api/pinjaman', pinjaman.deletePinjaman)
+
+
+//AUTH MANAGEMENTS
+// POST localhost:8000/api/register => register user
+router.post('/api/register', auth.register)
+
+// POST localhost:8000/api/login => login user
+router.post('/api/login', auth.login)
+
+// POST localhost:8000/api/logout => logout user
+router.post('/api/logout', auth.logout)
 
 module.exports = router;
